@@ -1,21 +1,22 @@
 var commandStr = "";
 var clearNext = false
+function clearAll() {
+  commandStr = "Enter text below";
+  clearNext = false;
+  $("#textHolder").html(commandStr);
+  commandStr = "";
+}
 $(".input").on("click", function() {
   if (clearNext == true) {
-    commandStr = "<span class=\"gray\">Enter text below</span>"
-    $("#textHolder").html(commandStr);
+    clearAll();
   }
-
   var inputText = $(this).text();
   commandStr += inputText;
   $("#textHolder").text(commandStr);
 });
-$(".clear").on("click", function() {
-  commandStr = ""
-  $("#textHolder").text(commandStr);
-});
+$(".clear").on("click", clearAll);
 $(".equals").on("click", function() {
-
+  inputText = eval(commandStr);
   commandStr = inputText;
   $("#textHolder").text(commandStr);
 });
