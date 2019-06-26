@@ -1,6 +1,6 @@
-var commandStr   = "";
+var commandStr = "";
 $(".input").on("click", function() {
   var inputText = $(this).text();
-  string += inputText
+   commandStr += inputText
   $("#textHolder").text(string)
 });
