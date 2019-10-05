@@ -16,7 +16,12 @@ $(".input").on("click", function() {
 });
 $(".clear").on("click", clearAll);
 $(".equals").on("click", function() {
-  inputText = eval(commandStr);
-  commandStr = inputText;
-  $("#textHolder").text(commandStr);
+  try {
+    inputText = eval(commandStr);
+      commandStr = inputText;
+  } catch (e) {
+    commandStr = "An error has occurd";
+  } finally {
+      $("#textHolder").text(commandStr);
+  }
 });
