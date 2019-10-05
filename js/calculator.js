@@ -3,7 +3,7 @@ var clearNext = false
 function clearAll() {
   commandStr = "Enter text below";
   clearNext = false;
-  $("#textHolder").html(commandStr);
+  document.getElementById("inputBox").value = commandStr
   commandStr = "";
 }
 $(".input").on("click", function() {
@@ -12,16 +12,18 @@ $(".input").on("click", function() {
   }
   var inputText = $(this).text();
   commandStr += inputText;
-  $("#textHolder").text(commandStr);
+  document.getElementById("inputBox").value = commandStr
 });
 $(".clear").on("click", clearAll);
 $(".equals").on("click", function() {
   try {
-    inputText = eval(commandStr);
-      commandStr = inputText;
+    evalText = document.getElementById("inputBox").value
+    inputText = eval(evalText);
+    commandStr = inputText;
   } catch (e) {
     commandStr = "An error has occurd";
   } finally {
-      $("#textHolder").text(commandStr);
+      document.getElementById("inputBox").value = commandStr
+      clearNext = true;
   }
 });
