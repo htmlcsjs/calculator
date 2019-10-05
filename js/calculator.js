@@ -21,7 +21,7 @@ $(".equals").on("click", function() {
     inputText = eval(evalText);
     commandStr = inputText;
   } catch (e) {
-    commandStr = "An error has occurd";
+    commandStr = "An error has occured";
   } finally {
       document.getElementById("inputBox").value = commandStr
       clearNext = true;
