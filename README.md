@@ -1,2 +1,2 @@
 # calculator
-goto <a href="htmlcsjs.gitub.io/calculator"> link <a>
+goto <a href="htmlcsjs.github.io/calculator"> link <a>
