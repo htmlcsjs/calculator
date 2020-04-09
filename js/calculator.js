@@ -24,7 +24,7 @@ for (var i = 0; i < inputNodeList.length; i++) {
 }
 
 document.getElementById("clear").addEventListener("click", clearAll, false);
-$("#equals").on("click", function() {
+document.getElementById("equals").addEventListener("click", function() {
   try {
     evalText = document.getElementById("inputBox").value
     inputText = eval(evalText);
@@ -35,4 +35,4 @@ $("#equals").on("click", function() {
     document.getElementById("inputBox").value = commandStr
     clearNext = true;
   }
-});
+}, false);
