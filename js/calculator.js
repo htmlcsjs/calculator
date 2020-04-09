@@ -23,8 +23,8 @@ for (var i = 0; i < inputNodeList.length; i++) {
   inputNodeList[i].addEventListener("click", inputEvent, false);
 }
 
-$(".clear").on("click", clearAll);
-$(".equals").on("click", function() {
+document.getElementById("clear").addEventListener("click", clearAll, false);
+$("#equals").on("click", function() {
   try {
     evalText = document.getElementById("inputBox").value
     inputText = eval(evalText);
