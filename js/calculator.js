@@ -1,19 +1,28 @@
 var commandStr = "";
 var clearNext = false
+var inputNodeList = document.getElementsByClassName("input")
+
 function clearAll() {
   commandStr = "Enter text below";
   clearNext = false;
   document.getElementById("inputBox").value = commandStr
   commandStr = "";
 }
-$(".input").on("click", function() {
+
+function inputEvent() {
   if (clearNext == true) {
     clearAll();
   }
-  var inputText = $(this).text();
+  var inputText = this.textContent;
   commandStr += inputText;
-  document.getElementById("inputBox").value = commandStr
-});
+  document.getElementById("inputBox").value = commandStr;
+}
+
+
+for (var i = 0; i < inputNodeList.length; i++) {
+  inputNodeList[i].addEventListener("click", inputEvent, false);
+}
+
 $(".clear").on("click", clearAll);
 $(".equals").on("click", function() {
   try {
@@ -23,7 +32,7 @@ $(".equals").on("click", function() {
   } catch (e) {
     commandStr = "An error has occured";
   } finally {
-      document.getElementById("inputBox").value = commandStr
-      clearNext = true;
+    document.getElementById("inputBox").value = commandStr
+    clearNext = true;
   }
 });
